@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+                                           <!-- NUC 192.168.100.7 -->
+
+  <machine name="nuc" address="asimov-B85M-DS3H" env-loader="/opt/ros/kinetic/env.sh" user="asimov" password="asimov" timeout="1" default="true"  /> 
+
+  <node name="listener" pkg="rospy_tutorials" type="listener.py" machine="nuc"/>
+  
+                                         <!-- RPI  pi-desktop 10.42.0.2/192.168.100.23 --> 
+  
+  <machine name="pi" address="10.42.0.2"  env-loader="/opt/ros/kinetic/env.sh" user="pi" password="raspberry" ssh-port="22" timeout="1" default="true"  />
+
+  <node name="talker" pkg="rospy_tutorials" type="talker.py" machine="pi"/>
+  
+</launch>                                     
